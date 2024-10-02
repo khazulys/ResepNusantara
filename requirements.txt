@@ -2,5 +2,6 @@ pyTelegramBotAPI
 requests
 fake-useragent
 bs4
+beautifulsoup4
 python-dotenv
 Flask
