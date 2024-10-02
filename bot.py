@@ -15,7 +15,7 @@ API_TOKEN = os.getenv('TOKEN')
 bot = telebot.TeleBot(API_TOKEN)
 
 # Generate random User-Agent for headers
-headers = {'User-Agent': UserAgent().random}
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'}
 
 USER_DATA_FILE = 'users.txt'
 
