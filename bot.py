@@ -27,6 +27,7 @@ def search_receipt(query):
     find = soup.find_all('a', class_='block-link__main')
 
     receipts = [(link.get_text(strip=True), link.get('href')) for link in find]
+    print(soup)
     print(find)
     print(receipts)
     return receipts
