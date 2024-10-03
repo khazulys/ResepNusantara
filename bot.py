@@ -6,6 +6,7 @@ from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from keep_alive import keep_alive
+import random
 
 load_dotenv()
 
@@ -14,8 +15,20 @@ keep_alive()
 API_TOKEN = os.getenv('TOKEN')
 bot = telebot.TeleBot(API_TOKEN)
 
+def user_agent():
+    for kanjut in range(1000):
+        rr = random.randint
+        rc = random.choice
+        device = random.choice(['SM-M115F','SM-A600A','SM-S911B','SM-A127F','SM-S911N','SM-A528B','SM-A515U','SM-A137F','SM-A528B','SM-A125U1','SM-A346N','SM-A015U1','SM-G986U1','SM-R925U','SM-G715A','SM-S911B','SM-A528B','SM-M215F','SM-A515F','SM-S911B','SM-N770F','SM-A256U1','SM-S111DL','SM-A750FN','SM-A546B','SM-A035G','SM-S911B','SM-A202F','SM-A528B','SM-G991B'])
+        build = random.choice(['UP1A.231005.007','TP1A.220624.014','SP1A.210812.015','RP1A.200720.009','QP1A.190711.019','PPR1.180610.009','OPM1.171019.011'])
+        uaku1 = f'Mozilla/5.0 (Linux; Android {str(rr(8,14))}; {device} Build/{build}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{str(rr(70,123))}.0.{str(rr(2000,6899))}.{str(rr(70,150))} Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/{str(rr(390,455))}.0.0.{str(rr(30,45))}.{str(rr(100,155))};]'
+        uaku2 = f'Mozilla/5.0 (Linux; Android {str(rr(7,14))}; {device}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(70,123))}.0.{str(rr(2000,6899))}.{str(rr(70,150))} Mobile Safari/537.36'
+        uaqu = random.choice([uaku1,uaku2])
+        
+        return uaqu
+
 # Generate random User-Agent for headers
-headers = {'User-Agent': UserAgent().random}
+headers = {'User-Agent': user_agent()}
 
 USER_DATA_FILE = 'users.txt'
 
