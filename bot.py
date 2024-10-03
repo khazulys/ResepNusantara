@@ -28,7 +28,14 @@ def user_agent():
         return uaqu
 
 # Generate random User-Agent for headers
-headers = {'User-Agent': user_agent()}
+headers = {
+    'User-Agent': UserAgent().random,
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Referer': 'https://cookpad.com/id',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+}
 
 USER_DATA_FILE = 'users.txt'
 
